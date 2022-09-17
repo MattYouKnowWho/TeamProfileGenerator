@@ -2,7 +2,7 @@
 
 # Description
 
-A Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
+A Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. 
 
 # Technologies Used
 
@@ -11,9 +11,21 @@ A Node.js command-line application that takes in information about employees on 
 - Node.js
 - Handlebars.js
 
-#Usage 
+# Installation
 
-` node index.js`
+You may GitClone this repo to install and run this application. 
+
+# Usage 
+
+` npm i `
+To install the necessary modules 
+
+`node index.js `
+To start the command-line application.
+
+You will need to input the name of the manager, engineers, and interns with their respective info. 
+
+To run what was generated, open ` index.html ` in your default browser. 
 
 # Preview 
 
@@ -25,6 +37,6 @@ A Node.js command-line application that takes in information about employees on 
 
 # Author
 
-Created with 🧠 by Matt Dunston
+Created with a 🧠 by Matt Dunston
 Have questions? Contact me at matt.cdunston21@gmail.com
 
