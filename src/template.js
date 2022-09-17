@@ -1,108 +1,112 @@
 
+const generateManagerCards = dataArray => {
+    let templateData = ""
+    let managers = dataArray.filter(data => data.constructor.name === "Manager");
+    managers.forEach(manager => {
+        templateData += `
+        <div class="card m-4" style="width: 20rem; height: 20rem;">
+            <div class="bg-primary h-25">
+                <h5 class="card-title text-light pt-2 pl-3">${manager.name}</h5>     
+                <h6 class="card-subtitle mb-2 pl-3 text-light">Manager</h6>
+            </div>
+            <div class="bg-dark  h-100">
+                <div class="bg-white ml-3 mr-3 mt-5">
+                    <p class="mb-1 pl-2 py-1">ID: ${manager.id}</p>
+                </div>
+                <div class="bg-white mt-0 ml-3 mr-3 ">
+                    <p class="mb-1 pl-2 py-1">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                </div>
+                <div class="bg-white ml-3 mr-3 ">
+                    <p class="mb-1 pl-2 py-1">Office Number: ${manager.officeNumber}</p>
+                </div>
+            </div>
+        </div>        
+        `
+    })
+    return templateData;
+}
 
-function manager(allEmployees) {
-    return allEmployees
-      .filter((employee) => {
-        return employee.getRole() === "Manager";
-      })
-      .map((managerCard) => {
-        return `<div class="card" style="width: 18rem;">
-            <div class="card-body header">
-              <h5 class="card-title">${managerCard.name}</h5>
-              <p class="card-text">${managerCard.getRole()}</p>
+const generateEngineerCards = dataArray => {
+    let templateData = ""
+    let engineers = dataArray.filter(data => data.constructor.name === "Engineer");
+    engineers.forEach(engineer => {
+        templateData += `
+        <div class="card m-4" style="width: 20rem; height: 20rem;">
+            <div class="bg-primary h-25">
+                <h5 class="card-title text-light pt-2 pl-3">${engineer.name}</h5>     
+                <h6 class="card-subtitle mb-2 pl-3 text-light">Engineer</h6>
             </div>
-            <div class="card-body">
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Id: ${managerCard.id}</li>
-            <li class="list-group-item">Email: <a href="mailto:${
-              managerCard.email
-            }">${managerCard.email}</a></li>
-            <li class="list-group-item">Office Number: ${
-              managerCard.officeNumber
-            }</li>
-          </ul>
+            <div class="bg-dark  h-100">
+                <div class="bg-white ml-3 mr-3 mt-5">
+                    <p class="mb-1 pl-2 py-1">ID: ${engineer.id}</p>
+                </div>
+                <div class="bg-white mt-0 ml-3 mr-3 ">
+                    <p class="mb-1 pl-2 py-1">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                </div>
+                <div class="bg-white ml-3 mr-3 ">
+                    <p class="mb-1 pl-2 py-1">GitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+                </div>
             </div>
-          </div>`;
-      })
-      .join("");
-  }
-  
-  function engineer(allEmployees) {
-    return allEmployees
-      .filter((employee) => {
-        return employee.getRole() === "Engineer";
-      })
-      .map((engineerCard) => {
-        return `<div class="card" style="width: 18rem;">
-          <div class="card-body header">
-            <h5 class="card-title">${engineerCard.name}</h5>
-            <p class="card-text">${engineerCard.getRole()}</p>
-          </div>
-          <div class="card-body">
-          <ul class="list-group list-group-flush">
-          <li class="list-group-item">Id: ${engineerCard.id}</li>
-          <li class="list-group-item">Email: <a href="mailto:${
-            engineerCard.email
-          }">${engineerCard.email}</a></li>
-          <li class="list-group-item">Github Username: <a href="https://github.com/${
-            engineerCard.github
-          }" target="_blank">${engineerCard.github}</a></li>
-        </ul>
-          </div>
-        </div>`;
-      })
-      .join("");
-  }
-  
-  function intern(allEmployees) {
-    return allEmployees
-      .filter((employee) => {
-        return employee.getRole() === "Intern";
-      })
-      .map((internCard) => {
-        return `<div class="card" style="width: 18rem;">
-          <div class="card-body header">
-            <h5 class="card-title">${internCard.name}</h5>
-            <p class="card-text">${internCard.getRole()}</p>
-          </div>
-          <div class="card-body">
-          <ul class="list-group list-group-flush">
-          <li class="list-group-item">Id: ${internCard.id}</li>
-          <li class="list-group-item">Email: <a href="mailto:${
-            internCard.email
-          }">${internCard.email}</a></li>
-          <li class="list-group-item">School: ${internCard.school}</li>
-        </ul>
-          </div>
-        </div>`;
-      })
-      .join("");
-  }
-  
-  function generateTeam(allEmployees) {
-    return `<!DOCTYPE html>
-    <html lang="en">
+        </div>        
+        `
+    })
+    return templateData;
+}
+
+const generateInternCards = dataArray => {
+    let templateData = ""
+    let interns = dataArray.filter(data => data.constructor.name === "Intern");
+    interns.forEach(intern => {
+        templateData += `
+        <div class="card m-4" style="width: 20rem; height: 20rem;">
+            <div class="bg-primary h-25">
+                <h5 class="card-title text-light pt-2 pl-3">${intern.name}</h5>     
+                <h6 class="card-subtitle mb-2 pl-3 text-light">Intern</h6>
+            </div>
+            <div class="bg-dark  h-100">
+                <div class="bg-white ml-3 mr-3 mt-5">
+                    <p class="mb-1 pl-2 py-1">ID: ${intern.id}</p>
+                </div>
+                <div class="bg-white mt-0 ml-3 mr-3 ">
+                    <p class="mb-1 pl-2 py-1">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                </div>
+                <div class="bg-white ml-3 mr-3 ">
+                    <p class="mb-1 pl-2 py-1">School: ${intern.school}</p>
+                </div>
+            </div>
+        </div>        
+        `
+    })
+    return templateData;
+}
+
+
+module.exports = data => {
+    return `
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-responsive.min.css">
-        <link rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-responsive-responsive.min.css">
-        <title>Team Generator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Team Profile</title>
     </head>
     <body>
-    <header>
-    <h1> My Team </h1>
+    <header class="bg-danger p-3 mb-5">
+        <h1 class="text-light text-center">My Team</h1>
     </header>
-    <main class="cardContainer">
-    ${manager(allEmployees)}
-    ${engineer(allEmployees)}
-    ${intern(allEmployees)}
-    </main>  
+    <main class="d-flex flex-wrap justify-content-center">
+    ${generateManagerCards(data)}
+    ${generateEngineerCards(data)}
+    ${generateInternCards(data)}
+    </main>
     </body>
-    </html>`;
-  }
-  
-  module.exports = generateTeam;
+</html>
+`
+}
