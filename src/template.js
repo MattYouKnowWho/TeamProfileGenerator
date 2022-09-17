@@ -61,7 +61,7 @@ const generateInternCards = dataArray => {
         <div class="card m-4" style="width: 20rem; height: 20rem;">
             <div class="bg-primary h-25">
                 <h5 class="card-title text-light pt-2 pl-3">${intern.name}</h5>     
-                <h6 class="card-subtitle mb-2 pl-3 text-light">Intern</h6>
+                <h6 class="card-subtitle mb-2 pl-3 text-light">Intern </h6>
             </div>
             <div class="bg-dark  h-100">
                 <div class="bg-white ml-3 mr-3 mt-5">
@@ -99,7 +99,7 @@ module.exports = data => {
     </head>
     <body>
     <header class="bg-danger p-3 mb-5">
-        <h1 class="text-light text-center">My Team</h1>
+        <h1 class="text-light text-center">My LLC Inc. </h1>
     </header>
     <main class="d-flex flex-wrap justify-content-center">
     ${generateManagerCards(data)}
